@@ -12,4 +12,7 @@ public class RealNumber {
 		}
 		return "Values are equal.";
 	}
+	public String toString() {
+		return "Value: " + number;
+	}
 }
