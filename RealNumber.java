@@ -1,18 +1,33 @@
 public class RealNumber {
-	private double number;
-	public double getNumber() {
-		return number;
+	private double value;
+	public RealNumber(double v) {
+		value = v;
 	}
-	public String compareTo(double otherNumber) {
-		if (number > otherNumber) {
-			return number + " is bigger than " + otherNumber;
+	public double add(RealNumber other){
+    return value + other.getValue();
+  }
+	public double multiply(RealNumber other){
+    return value * other.getValue();
+  }
+	public double divide(RealNumber other){
+    return value / other.getValue();
+  }
+	public double subtract(RealNumber other){
+    return value - other.getValue();
+  }
+	public double getValue() {
+		return value;
+	}
+	public String compareTo(double otherValue) {
+		if (value > otherValue) {
+			return value + " is bigger than " + otherValue;
 		}
-		if (number < otherNumber) {
-			return otherNumber + " is bigger than " + number;
+		if (value < otherValue) {
+			return otherValue + " is bigger than " + value;
 		}
 		return "Values are equal.";
 	}
 	public String toString() {
-		return "Value: " + number;
+		return "Value: " + value;
 	}
 }
