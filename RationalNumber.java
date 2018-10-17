@@ -15,15 +15,24 @@ public class RationalNumber extends RealNumber {
 		return numerator + 0.0 / denominator;
 	}
 	public int getNumerator() {
-		return 2;
+		return numerator;
 	}
 	public int getDenominator() {
-		return 5;
+		return denominator;
+	}
+	public RationalNumber reciprocal() {
+		numerator = denominator;
+		denominator = numerator;
+		return this;
+	}
+	public boolean equals(RationalNumber other) {
+		return (this == other);
 	}
 	public String compareTo() {
 		return "4/5 is bigger than 5/7.";
 	}
 	public String toString() {
-		return "Numerator: 2 Denominator: 5";
+		return numerator + "/" + denominator;
 	}
+	private static int 
 }
