@@ -28,6 +28,6 @@ public class RealNumber {
 		return "Values are equal.";
 	}
 	public String toString() {
-		return "Value: " + value;
+		return "" + value;
 	}
 }
