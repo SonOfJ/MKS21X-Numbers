@@ -50,15 +50,15 @@ public class RationalNumber extends RealNumber {
 		return god;
 	}
 	public RationalNumber multiply(RationalNumber other) {
-		return new RationalNumber(numerator * other.numerator, denominator * other.denominator);
+		return new RationalNumber(numerator * other.numerator, denominator * other.denominator).reduce();
 	}
 	public RationalNumber divide(RationalNumber other) {
-		return new RationalNumber(numerator / other.numerator, denominator / other.denominator);
+		return new RationalNumber(numerator / other.numerator, denominator / other.denominator).reduce();
 	}
 	public RationalNumber add(RationalNumber other) {
-		return new RationalNumber(numerator * other.denominator + other.numerator * denominator, denominator * other.denominator);
+		return new RationalNumber(numerator * other.denominator + other.numerator * denominator, denominator * other.denominator).reduce();
 	}
 	public RationalNumber subtract(RationalNumber other) {
-		return new RationalNumber(numerator * other.denominator - other.numerator * denominator, denominator * other.denominator);
+		return new RationalNumber(numerator * other.denominator - other.numerator * denominator, denominator * other.denominator).reduce();
 	}
 }
