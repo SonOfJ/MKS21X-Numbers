@@ -21,12 +21,12 @@ public class RationalNumber extends RealNumber {
 		return denominator;
 	}
 	public RationalNumber reciprocal() {
-		numerator = denominator;
-		denominator = numerator;
-		return this;
+		return new RationalNumber(denominator, numerator);
 	}
 	public boolean equals(RationalNumber other) {
-		return (this == other);
+		RationalNumber alpha = this.reduce();
+		RationalNumber beta = other.reduce();
+		return (alpha.numerator == beta.numerator && alpha.denominator == beta.denominator);
 	}
 	public String toString() {
 		return numerator + "/" + denominator;
@@ -39,10 +39,11 @@ public class RationalNumber extends RealNumber {
 		}
 		return a;
 	}
-	private void reduce() {
+	private RationalNumber reduce() {
 		int gcd = gcd(numerator, denominator);
 		numerator = numerator / gcd;
 		denominator = denominator / gcd;
+		return this;
 	}
 	public RationalNumber multiply(RationalNumber other) {
 		return new RationalNumber(numerator * other.numerator, denominator * other.denominator);
