@@ -8,8 +8,8 @@ public class RationalNumber extends RealNumber {
 			this.denominator = 1;
 		} else {
 			if (denominator < 0) {
-				denominator = denominator * -1;
-				numerator = numerator * -1;
+				this.denominator = denominator * -1;
+				this.numerator = numerator * -1;
 			} else {
 				this.numerator = numerator;
 				this.denominator = denominator;
@@ -53,7 +53,7 @@ public class RationalNumber extends RealNumber {
 		return new RationalNumber(numerator * other.numerator, denominator * other.denominator).reduce();
 	}
 	public RationalNumber divide(RationalNumber other) {
-		return new RationalNumber(numerator * other.denominator, denominator / other.numerator).reduce();
+		return new RationalNumber(numerator * other.denominator, denominator * other.numerator).reduce();
 	}
 	public RationalNumber add(RationalNumber other) {
 		return new RationalNumber(numerator * other.denominator + other.numerator * denominator, denominator * other.denominator).reduce();
