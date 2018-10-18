@@ -41,9 +41,8 @@ public class RationalNumber extends RealNumber {
 	}
 	private RationalNumber reduce() {
 		int gcd = gcd(numerator, denominator);
-		numerator = numerator / gcd;
-		denominator = denominator / gcd;
-		return this;
+		RationalNumber god = new RationalNumber(numerator / gcd, denominator / gcd);
+		return god;
 	}
 	public RationalNumber multiply(RationalNumber other) {
 		return new RationalNumber(numerator * other.numerator, denominator * other.denominator);
