@@ -7,8 +7,13 @@ public class RationalNumber extends RealNumber {
 			this.numerator = 0;
 			this.denominator = 1;
 		} else {
-			this.numerator = numerator;
-			this.denominator = denominator;
+			if (denominator < 0) {
+				denominator = denominator * -1;
+				numerator = numerator * -1;
+			} else {
+				this.numerator = numerator;
+				this.denominator = denominator;
+			}
 		}
 	}
 	public double getValue() {
