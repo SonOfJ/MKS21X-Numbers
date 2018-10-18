@@ -28,9 +28,6 @@ public class RationalNumber extends RealNumber {
 	public boolean equals(RationalNumber other) {
 		return (this == other);
 	}
-	public String compareTo() {
-		return "4/5 is bigger than 5/7.";
-	}
 	public String toString() {
 		return numerator + "/" + denominator;
 	}
