@@ -53,7 +53,7 @@ public class RationalNumber extends RealNumber {
 		return new RationalNumber(numerator * other.numerator, denominator * other.denominator).reduce();
 	}
 	public RationalNumber divide(RationalNumber other) {
-		return new RationalNumber(numerator / other.numerator, denominator / other.denominator).reduce();
+		return new RationalNumber(numerator * other.denominator, denominator / other.numerator).reduce();
 	}
 	public RationalNumber add(RationalNumber other) {
 		return new RationalNumber(numerator * other.denominator + other.numerator * denominator, denominator * other.denominator).reduce();
